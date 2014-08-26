@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+       
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages"/>
+    </bean>
+    
+	<bean name="/index/*.htm" class="com.ceiroa.ihealth.controller.Index">
+    	<property name="viewName" value="index"/>
+    </bean>
+    
+    <bean name="/changePssw/*.htm" class="com.ceiroa.ihealth.controller.ChangePssw">
+   		<property name="viewName" value="changeMyPssw" />
+    </bean>   
+    	  	
+    <bean name="/deleteClient/*.htm" class="com.ceiroa.ihealth.controller.DeleteClient">
+    	<property name="viewName" value="manage/manageClients"/>
+	</bean>   
+    
+	<bean name="/deleteVisit/*.htm" class="com.ceiroa.ihealth.controller.DeleteVisit">
+    	<property name="viewName" value="manage/manageVisits"/>
+	</bean>   
+        
+    <bean name="/logout.htm" class="com.ceiroa.ihealth.controller.LogOut">
+    	<property name="viewName" value="index"/>
+ 	</bean>   
+       	
+    <bean name="/uploadFiles/*.htm" class="com.ceiroa.ihealth.controller.Upload">
+    	<property name="viewName" value="uploadFiles"/>
+ 	</bean>   
+       	
+    <bean name="/cervicalSpine/*.htm" class="com.ceiroa.ihealth.controller.forms.VisitCervicalSpine">
+    	<property name="viewName" value="forms/visitCervicalSpine"/>
+    </bean>   
+    	
+    <bean name="/lowerExtremities/*.htm" class="com.ceiroa.ihealth.controller.forms.VisitLowerExtremities">
+    	<property name="viewName" value="forms/visitLowerExtremities"/>
+    </bean>   
+    	
+    <bean name="/lumbarSpine/*.htm" class="com.ceiroa.ihealth.controller.forms.VisitLumbarSpine">
+    	<property name="viewName" value="forms/visitLumbarSpine"/>
+	</bean>   
+        	
+    <bean name="/upperExtremities/*.htm" class="com.ceiroa.ihealth.controller.forms.VisitUpperExtremities">
+    	<property name="viewName" value="forms/visitUpperExtremities"/>
+	</bean>   
+        	
+    <bean name="/manageClients/*.htm" class="com.ceiroa.ihealth.controller.manage.ManageClients">
+    	<property name="viewName" value="manage/manageClients"/>
+	</bean>   
+        	
+    <bean name="/manageUploads/*.htm" class="com.ceiroa.ihealth.controller.manage.ManageUploads">
+    	<property name="viewName" value="manage/manageUploads"/>
+	</bean>   
+        	
+    <bean name="/manageUsers/*.htm" class="com.ceiroa.ihealth.controller.manage.ManageUsers">
+    	<property name="viewName" value="manage/manageUsers"/>
+	</bean>   
+        	
+    <bean name="/manageVisits/*.htm" class="com.ceiroa.ihealth.controller.manage.ManageVisits">
+    	<property name="viewName" value="manage/manageVisits"/>
+	</bean>   
+        	
+    <bean name="/newClient/*.htm" class="com.ceiroa.ihealth.controller.newitem.NewClient">
+    	<property name="viewName" value="new/newClient"/>
+    	<property name="messageViewName" value="manage/manageClients"/>
+	</bean>   
+        	
+    <bean name="/newUser/*.htm" class="com.ceiroa.ihealth.controller.newitem.NewUser">
+    	<property name="viewName" value="new/newUser"/>
+	</bean>   
+        	
+    <bean name="/newVisit/*.htm" class="com.ceiroa.ihealth.controller.newitem.NewVisit">
+    	<property name="viewName" value="new/newVisit"/>
+	</bean>
+        
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+	</bean>
+	
+</beans>
